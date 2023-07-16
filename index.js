@@ -1,9 +1,9 @@
 const contentLetterSrart_actived = "Quà của An" //Lời mở đầu cho bức thư
 const mainContentLetter = "Chúc Thảo sinh nhật vui vẻ, tuổi mới xinh lại thêm xinh, duyên lại càng thêm duyên và yêu đời nhé!" //Nội dung của bức thư
 
-// Gắn 1 đường link ảnh bất kì
-let imgStart = document.querySelector(".myAI"); //Hình ảnh xuất hiện trong lời mở đầu của bức thư
-imgStart.src = "./img/cute-young-boy-kid-wearing-vest-and-hat-free-png.png";
+// // Gắn 1 đường link ảnh bất kì
+// let imgStart = document.querySelector(".myAI"); //Hình ảnh xuất hiện trong lời mở đầu của bức thư
+// imgStart.src = "./img/cute-young-boy-kid-wearing-vest-and-hat-free-png.png";
 
 // Gắn 1 link ảnh bất kì
 let imgLetter = document.querySelector(".img");
