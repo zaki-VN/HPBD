@@ -3,11 +3,11 @@ const mainContentLetter = "Chúc Thảo sinh nhật vui vẻ, tuổi mới xinh 
 
 // Gắn 1 đường link ảnh bất kì
 let imgStart = document.querySelector(".myAI"); //Hình ảnh xuất hiện trong lời mở đầu của bức thư
-imgStart.src = "./cute-young-boy-kid-wearing-vest-and-hat-free-png.png";
+imgStart.src = "./img/cute-young-boy-kid-wearing-vest-and-hat-free-png.png";
 
 // Gắn 1 link ảnh bất kì
 let imgLetter = document.querySelector(".img");
-imgLetter.src = "./b4bbdb54b7152338d7143cb444a77f09.png"; //Hình ảnh xuất hiện trong nội dung của bức thư sau khi bức thư được viết ra hết
+imgLetter.src = "./img/b4bbdb54b7152338d7143cb444a77f09.png"; //Hình ảnh xuất hiện trong nội dung của bức thư sau khi bức thư được viết ra hết
 
 const splitContentLetterSrart_actived = contentLetterSrart_actived.split("");
 
@@ -36,13 +36,13 @@ document.querySelector(".recieve").addEventListener("click", () => {
     if (!isContentLetterAnimated) {
         return;
     }
-    
+
     document.querySelector(".startLetter").classList.add("close");
     setTimeout(() => {
         document.querySelector(".startForm").classList.add("close");
         setTimeout(() => {
             document.querySelector(".startForm").setAttribute("style", "bottom: 100%");
-            
+
             let getTypeDevice = document.documentElement.clientWidth;
             if (getTypeDevice <= 768) {
                 createFireworks(20);
@@ -85,13 +85,13 @@ document.querySelector(".recieve").addEventListener("click", () => {
     if (!isMainContentAnimated) {
         return;
     }
-    
+
     document.querySelector(".startLetter").classList.add("close");
     setTimeout(() => {
         document.querySelector(".startForm").classList.add("close");
         setTimeout(() => {
             document.querySelector(".startForm").setAttribute("style", "bottom: 100%");
-            
+
             let getTypeDevice = document.documentElement.clientWidth;
             if (getTypeDevice <= 768) {
                 createFireworks(20);
@@ -112,13 +112,13 @@ function createFireworks(a) {
     const container = document.querySelector(".backgroundParty");
     const count = 50;
     const allDefaultColor = ["red", "lime", "yellow", "orange", "blue"];
-  
+
     for (let i = 0; i < count; i++) {
       const randomLeft = Math.floor(Math.random() * width);
       const randomTop = Math.floor(Math.random() * height / 2);
       const widthEle = Math.floor(Math.random() * 10) + 5;
       const moveTime = Math.floor(Math.random() * 6) + 2;
-  
+
       const div = document.createElement("div");
       div.classList.add("firework");
       div.style.position = "absolute";
@@ -126,13 +126,13 @@ function createFireworks(a) {
       div.style.borderRadius = "50%";
       div.style.opacity = "0.8";
       div.style.pointerEvents = "none";
-  
+
       div.style.height = `${widthEle}px`;
       div.style.width = `${widthEle}px`;
       div.style.marginLeft = `${randomLeft}px`;
       div.style.marginTop = `${randomTop}px`;
       div.style.animation = `explode ${moveTime}s ease-in-out`;
-  
+
       container.appendChild(div);
       setTimeout(() => {
         container.removeChild(div);
@@ -140,7 +140,7 @@ function createFireworks(a) {
     }
   }
   createFireworks();
-  
+
   setInterval(() => {
     createFireworks();
   }, 5000);
