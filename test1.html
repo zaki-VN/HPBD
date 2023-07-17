@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Thiệp Sinh Nhật</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="fireworks"></div>
+
+    <div class="card">
+        <h1>Chúc mừng sinh nhật</h1>
+        <div class="content">
+            <div class="line" id="line1">
+                <div class="word">Tuổi</div>
+                <div class="word">20</div>
+                <div class="word">là</div>
+                <div class="word">một</div>
+                <div class="word">cột</div>
+                <div class="word">mốc</div>
+                <div class="word">quan</div>
+                <div class="word">trọng</div>
+                <div class="word">trong</div>
+                <div class="word">cuộc</div>
+                <div class="word">đời.</div>
+            </div>
+            <div class="line" id="line2">
+                <div class="word">Hãy</div>
+                <div class="word">trân</div>
+                <div class="word">trọng</div>
+                <div class="word">những</div>
+                <div class="word">khoảnh</div>
+                <div class="word">khắc</div>
+                <div class="word">tuyệt</div>
+                <div class="word">vời</div>
+                <div class="word">và</div>
+                <div class="word">biến</div>
+                <div class="word">mỗi</div>
+                <div class="word">giây</div>
+                <div class="word">phút</div>
+                <div class="word">trở</div>
+                <div class="word">thành</div>
+                <div class="word">những</div>
+                <div class="word">kỷ</div>
+                <div class="word">niệm</div>
+                <div class="word">đáng</div>
+                <div class="word">nhớ.</div>
+            </div>
+            <div class="line" id="line4">
+                <div class="word">Chúc</div>
+                <div class="word">Thảo</div>
+                <div class="word">có</div>
+                <div class="word">một</div>
+                <div class="word">ngày</div>
+                <div class="word">sinh</div>
+                <div class="word">nhật</div>
+                <div class="word">thật</div>
+                <div class="word">vui</div>
+                <div class="word">vẻ</div>
+                <div class="word">và</div>
+                <div class="word">tràn</div>
+                <div class="word">đầy</div>
+                <div class="word">niềm</div>
+                <div class="word">vui</div>
+                <div class="word">bên</div>
+                <div class="word">gia</div>
+                <div class="word">đình</div>
+                <div class="word">và</div>
+                <div class="word">những</div>
+                <div class="word">người</div>
+                <div class="word">thân</div>
+                <div class="word">yêu!</div>
+            </div>
+        </div>
+        <div class="signature">- An -</div>
+        
+        <div class="cake"></div>
+    </div>
+
+    <div class="envelope-btn" onclick="openCard(); disableEffects()">
+        <i class="fas fa-envelope"></i>
+    </div>
+
+    <script>
+        let disableEffectsFlag = false;
+
+        function createFirework() {
+            if (!disableEffectsFlag) {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
+                firework.style.left = Math.random() * 100 + 'vw';
+                firework.style.top = Math.random() * 100 + 'vh';
+                firework.style.backgroundColor = getRandomColor();
+                firework.style.animationDuration = (Math.random() * 1 + 1) + 's';
+                firework.style.animationDelay = (Math.random() * 0.5) + 's';
+                document.querySelector('.fireworks').appendChild(firework);
+                setTimeout(() => {
+                    firework.remove();
+                }, 1500);
+            }
+        }
+
+        setInterval(createFirework, 100);
+
+        function openCard() {
+            const card = document.querySelector('.card');
+            card.classList.add('open');
+            
+            const envelopeBtn = document.querySelector('.envelope-btn');
+            envelopeBtn.style.display = 'none';
+        }
+
+        function disableEffects() {
+            disableEffectsFlag = false;
+        }
+
+        function animateText() {
+            const lines = document.querySelectorAll('.line');
+            lines.forEach((line) => {
+                const words = line.querySelectorAll('.word');
+                words.forEach((word) => {
+                    const chars = word.textContent.split('');
+                    word.textContent = '';
+                    chars.forEach((char) => {
+                        const span = document.createElement('span');
+                        span.textContent = char;
+                        span.className = 'char';
+                        word.appendChild(span);
+                    });
+                });
+            });
+        }
+
+        animateText();
+
+        function getRandomColor() {
+            const colors = ['#ff69b4', '#69d6e9', '#ffbedb', '#ffd700', '#00ff00', '#800080', '#ff0000', '#ffa500'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+</body>
+</html>
